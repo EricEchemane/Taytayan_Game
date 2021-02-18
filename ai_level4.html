@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max level - vs AI | Taytayan Game</title>
+    <link rel="stylesheet" href="./main/main.css">  
+    <link rel="stylesheet" href="./aos-master/dist/aos.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="center">
+        <div class="player computer">AI</div>
+
+        <div class="mainBoard" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="cells"><div class="piece comp"></div></div>
+            <div class="cells"><div class="piece comp"></div></div>
+            <div class="cells"><div class="piece comp"></div></div>
+            <div class="cells"><div class="piece vacant"></div></div>
+            <div class="cells"><div class="piece vacant"></div></div>
+            <div class="cells"><div class="piece vacant"></div></div>
+            <div class="cells"><div class="piece you"></div></div>
+            <div class="cells"><div class="piece you"></div></div>
+            <div class="cells"><div class="piece you"></div></div>
+        </div>
+
+        <div class="player You" >You</div>
+    </div>
+
+
+    <div class="playerTurn">
+        <div class="label">Player Turn</div>
+        <div id="playerTurn"></div>
+    </div>
+
+    <div class="options" title="options">...</div>
+
+    <div class="menu">
+        <a href="">New Game</a>
+        <a href="./index.html">Main menu</a>
+        <a href="./vs AI.html">Quit Game</a>
+    </div>
+
+    <div class="dimmer">
+        <div class="winDiv">
+            <h1 id="winner">Player A - Wins</h1>
+            <a href="" class="btn btn0">New Game</a>
+            <a href="./index.html" class="btn btn1">Main menu</a>
+        </div>
+    </div>
+
+    <script src="./main/ai_level4.js" ></script>
+    <script src="./aos-master/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        const option = document.getElementsByClassName("options")[0]
+        const bg = document.getElementsByClassName("background")[0]
+        let menu = document.getElementsByClassName("menu")[0]
+
+        optionIsVisible = false
+
+        option.onclick = e => {
+            if (optionIsVisible){
+                optionIsVisible = false
+                menu.style.display = "none"
+                return
+            }
+            optionIsVisible = true
+            menu.style.display = "flex"
+        }
+
+        bg.onclick = e=> {
+            menu.style.display = "none"
+            optionIsVisible = false
+        }
+    </script>
+</body>
+</html>

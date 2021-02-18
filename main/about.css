@@ -1,0 +1,25 @@
+body{
+    background-color: whitesmoke;
+}
+.nav{
+    background-color: #2f2519;
+}
+
+.navbar-brand{
+    font-family: The Brands;
+    font-size: 1.7rem;
+}
+#main{
+    transform: translateY(7rem);
+}
+#board{
+    width: 15%;
+    float: left;
+    padding-right: 1rem;
+}
+
+.figure2{
+    width: 200px;
+    float: left;
+    padding: .5rem 1rem 1rem 0;
+}

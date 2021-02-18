@@ -1,0 +1,277 @@
+
+:root{
+    --font1: sans-serif;
+    --font2: the brands;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg,white,lightgray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.background h1{
+    font-family: the brands;
+    color: white;
+    background-image: url(../assets/dark_board_wood_image.jpg);
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    font-size: 5rem;
+}
+
+.mainColor{
+    background-color: #16172a;
+    color: azure;
+}
+
+.center{
+    width: 450px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: dodgerblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: var(--font2);
+    z-index: 2;
+}
+
+.player{
+    padding: 1rem;
+}
+
+.mainBoard{
+    width: 100%;
+    height: 450px;
+    background-image: url(../assets/dark_board_wood_image.jpg);
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: .5rem;
+    box-sizing: content-box;
+    border: 10px solid #2f2519;
+    box-shadow: 0px 0px 30px white,
+                10px 10px 10px gray;
+}
+
+.cells{
+    background-image: url(../assets/board_wood_image.jpg);
+    border-radius: 5px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piece{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,.7),
+                inset -3px -3px 5px rgba(255,2552,255,.7);
+    cursor: pointer;
+    transition: .3s ease;
+}
+.piece:hover{
+    transform: scale(1.2);
+}
+.comp{
+    background-color: #eaf0f6;
+    opacity: 1;
+    box-shadow: inset 2px 2px 5px white,
+    inset -2px -2px 10px gray
+    ,7px 5px 5px rgba(0,0,0,.3);
+}
+.you{   
+    background-color: #202020;
+    opacity: 1;
+    box-shadow: inset 2px 2px 5px rgba(255,2552,255,.3),
+    inset -2px -2px 10px black
+    ,7px 5px 5px rgba(0,0,0,.6);
+}
+
+
+.playerTurn{
+    width: 200px;
+    height: 100px;
+    box-shadow: 2px 2px 5px gray;
+    border-radius:  0 0 10px 10px;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    overflow: hidden;
+    transform: translateY(-50%);
+    background-color: whitesmoke;
+    z-index: 1;
+}
+
+.label{
+    background-color: #483d31;
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+    padding: .5rem;
+}
+#playerTurn{
+    font-size: 3rem;
+    font-family: the brands;
+    text-align: center;
+}
+
+.options{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 3rem;
+    position: absolute;
+    top: calc( (100vh - 450px) / 2 - 25px);
+    right: 4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    line-height: 25px;
+    z-index: 3;
+}
+.options:hover{
+    background-color: lightgray;
+    transition: .3s ease-in-out;
+}
+.menu{
+    width: 200px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+    position: absolute;
+    top: calc( (100vh - 450px) / 2 - 10px);
+    right: 135px;
+    display: none;
+    flex-direction: column;
+    background-color: whitesmoke;
+    z-index: 3;
+    overflow: hidden;
+}
+.menu a{
+    padding: .5rem 1rem;
+    font-family: sans-serif;
+    color: #202020;
+}
+.menu a:hover{
+    background-color: lightgray;
+}
+.clicked{
+    transform: scale(1.2);
+    border: 3px solid red;
+}
+
+.dimmer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 6;
+    background-color: rgba(0,0,0,.8);
+    transition: .3s ease;
+}
+.winDiv{
+    width: 600px;
+    height: 500px;
+    margin: calc( (100vh - 500px) / 2 ) auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#winner{
+    color: whitesmoke;
+    font-family: the brands;
+    font-size: 5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn{
+    color: whitesmoke;
+    width: 170px;
+    text-align: center;
+    padding: .5rem;
+    margin: .75rem;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border-radius: 20px; */
+    text-shadow: 0 0 10px black;
+    font-weight: 500;
+}
+.btn:hover{
+    filter: brightness(2);
+}
+.btn0{
+    background-color: green;
+}
+.btn1{
+    background-color: orange;
+}
+.btn2{
+    background-color: crimson;
+}
+
+.win{
+    animation: circle .5s infinite;
+}
+@keyframes circle{
+    0%{
+        border: 3px solid greenyellow;
+        transform: rotate(0deg) scale(1.3);
+        box-shadow: none;
+    }
+    50%{
+
+        border: 3px solid greenyellow;
+        transform: rotate(360deg) scale(1);
+        box-shadow: none;
+    }
+    100%{
+        border: 3px solid greenyellow;
+        transform: rotate(0deg) scale(1.3);
+        box-shadow: none;
+    }
+}
+
+.links{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    text-align: center;
+}
+.links a{
+    font-size: .8rem;
+    text-decoration:  none;
+    padding: 1rem;
+}
+
+#dropdownMenuButton{
+    background-color: #2f2519;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+
+.main{
+    transform: translateY(3rem);
+}
