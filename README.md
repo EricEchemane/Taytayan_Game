@@ -2,4 +2,4 @@
 
 Web Game Inspired in Bicol
 
-[Try the game: Click here](https://ericechemane.github.io/Taytayan_Game/PvP.html)
+[Try the game: Click here](https://ericechemane.github.io/Taytayan_Game/)
